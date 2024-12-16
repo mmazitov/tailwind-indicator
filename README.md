@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">Tailwind Breakpoint Indicator</h1>
 
-## Getting Started
+## 🎯 About 
+TailwindIndicator is a React component designed to visually display the currently active Tailwind CSS breakpoint. It is intended for development purposes only and helps developers quickly identify the viewport size class (e.g., xs, sm, md, etc.) as defined by Tailwind CSS.
 
-First, run the development server:
+## ✨ Features
+- Displays the current active Tailwind CSS breakpoint as a small badge in the top-left corner of the screen.
+- Only renders in non-production environments (based on NODE_ENV).
+- Dynamically updates as the viewport size changes, showing breakpoints like ``xs``, ``sm``, ``md``, ``lg``, ``xl``, and ``2xl``.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🏁 Installation
+1) Add the ``TailwindIndicator`` component to your project:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+		import TailwindIndicator from './TailwindIndicator';
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2) Include the component in your application layout or root file (e.g., ``App.js`` or ``index.js``):
+   
+		const App = () => (
+			<div>
+				<TailwindIndicator />
+				{/* Other components */}
+			</div>
+		);
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3) Ensure you have Tailwind CSS set up in your project. If not, follow the [Tailwind CSS installation guide](https://tailwindcss.com/docs/installation).
+   
+## Usage
 
-## Learn More
+<h3>Development Mode</h3>
+The <code>TailwindIndicator</code> component will automatically appear in development mode (<code>NODE_ENV !== 'production'</code>). It shows the active breakpoint dynamically in the following format:
 
-To learn more about Next.js, take a look at the following resources:
+- <code>xs</code>: Extra small screens
+- <code>sm</code>: Small screens
+- <code>md</code>: Medium screens
+- <code>lg</code>: Large screens
+- <code>xl</code>: Extra large screens
+- <code>2xl</code>: Extra extra large screens
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<h3>Production Mode</h3>
+The component automatically returns <code>null</code> in production mode (<code>NODE_ENV === 'production'</code>) to avoid unnecessary rendering in live environments.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue if you encounter any bugs or have feature requests.
